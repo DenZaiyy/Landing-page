@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap");
 :root {
-  --gradient: radial-gradient(rgb(139,195,245), #1294b8);
+  --clr-gradient: #1294b8;
   --clr-black: #393937;
   --clr-white: #fff;
-  --clr-cyan: #1294b8;
+  --clr-cyan: #5A8FFF;
   --clr-cyan-2: rgb(139,195,245);
   --clr-lightgrey: rgb(216, 216, 216);
   --clr-grey: #C1C1C1;
@@ -25,7 +25,7 @@ html {
 }
 
 header {
-  background: var(--gradient);
+  background: radial-gradient(rgb(255, 255, 255), var(--clr-gradient));
   min-height: 100vh;
 }
 header nav {
@@ -126,7 +126,7 @@ header .section-1 figure {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 20px;
+  min-height: 100vh;
 }
 .features h2 {
   text-transform: capitalize;
@@ -139,20 +139,20 @@ header .section-1 figure {
   color: var(--clr-grey);
 }
 .features .cards {
-  margin-top: 50px;
-  margin-bottom: 30px;
+  margin: 50px;
   display: flex;
 }
 .features .cards .card {
-  background: var(--gradient);
+  background: var(--clr-cyan);
   margin: 0 15px;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 350px;
-  height: 300px;
+  width: 100%;
+  height: 100%;
+  padding: 50px;
   border-radius: 10px;
   color: var(--clr-white);
   transition: var(--trans-02s-linear);
@@ -181,7 +181,7 @@ header .section-1 figure {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: 20px;
+  min-height: 100vh;
 }
 .teams h2 {
   width: 35%;
@@ -260,16 +260,16 @@ header .section-1 figure {
 .teams .employee .person .img .socials a {
   text-decoration: none;
   color: black;
-}
-.teams .employee .person .img .socials a i {
-  padding: 8px;
   background-color: var(--clr-white);
   margin-top: 5px;
   border-radius: 50%;
 }
+.teams .employee .person .img .socials a i {
+  padding: 8px;
+}
 .teams .employee .person .img:hover .socials {
   transition: all 0.2s ease-in;
-  transform: translateX(10px) translateY(40px);
+  transform: translateX(15px) translateY(40px);
   opacity: 1;
 }
 .teams .employee .person .img img {
@@ -294,7 +294,7 @@ header .section-1 figure {
   background-position: center;
   background-attachment: fixed;
   margin-top: 50px;
-  height: 400px;
+  height: 600px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -344,7 +344,7 @@ header .section-1 figure {
 }
 
 .blogs-sec {
-  margin-top: 50px;
+  min-height: 100vh;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -432,7 +432,7 @@ header .section-1 figure {
 .pricing-sec .creative {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  margin-top: 100px;
 }
 .pricing-sec .creative .creative-desc {
   display: flex;
@@ -469,7 +469,7 @@ header .section-1 figure {
   width: -moz-max-content;
   width: max-content;
   padding: 10px 40px;
-  background-color: #5A8FFF;
+  background-color: var(--clr-cyan);
   border: 1px solid var(--clr-white);
   border-radius: 5px;
   color: var(--clr-white);
@@ -479,8 +479,8 @@ header .section-1 figure {
 .pricing-sec .creative .creative-desc .btn-learn:hover {
   transition: var(--trans-02s-linear);
   background-color: var(--clr-white);
-  color: #5A8FFF;
-  border: 1px solid #5A8FFF;
+  color: var(--clr-cyan);
+  border: 1px solid var(--clr-cyan);
 }
 .pricing-sec .creative .creative-img {
   width: -moz-max-content;
@@ -497,9 +497,10 @@ header .section-1 figure {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 20px;
+  min-height: 100vh;
+  padding-top: 100px;
   background-color: #F3F3F3;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
 }
 .pricing-sec .pricing h2 {
   font-size: 2rem;
@@ -544,7 +545,7 @@ header .section-1 figure {
   margin-top: 0;
 }
 .pricing-sec .pricing .cards-price .card-price .price .price-mount {
-  color: #598FFE;
+  color: var(--clr-cyan);
   font-size: 4em;
   font-weight: 500;
   width: auto;
@@ -575,8 +576,8 @@ header .section-1 figure {
   padding: 10px 20px;
   text-align: center;
   border-radius: 5px;
-  background-color: #598FFE;
-  border: 1px solid #598FFE;
+  background-color: var(--clr-cyan);
+  border: 1px solid var(--clr-cyan);
   text-decoration: none;
   color: var(--clr-white);
   margin-top: 30px;
@@ -585,8 +586,8 @@ header .section-1 figure {
 .pricing-sec .pricing .cards-price .card-price .btn-join:hover {
   transition: var(--trans-02s-linear);
   background-color: var(--clr-white);
-  color: #5A8FFF;
-  border: 1px solid #5A8FFF;
+  color: var(--clr-cyan);
+  border: 1px solid var(--clr-cyan);
 }
 .pricing-sec .pricing .cards-price .card-price .sales {
   position: absolute;
@@ -595,7 +596,7 @@ header .section-1 figure {
   padding: 20px;
   width: -moz-min-content;
   width: min-content;
-  background-color: #416FC9;
+  background-color: var(--clr-cyan);
   color: var(--clr-white);
   border-bottom-left-radius: 20px;
   border-top-right-radius: 10px;
@@ -669,67 +670,74 @@ footer .copyright {
 
 .settings {
   display: flex;
+  flex-direction: column-reverse;
   position: fixed;
-  top: 5vh;
+  top: 20vh;
+  left: 0;
+  z-index: 1;
 }
-
-.square-option {
-  position: fixed;
+.settings .square-option {
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 20vh;
   width: 50px;
   height: 50px;
   background-color: #393937;
   text-decoration: none;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
   cursor: pointer;
   transition: var(--trans-02s-linear);
 }
-.square-option:hover {
-  transition: var(--trans-02s-linear);
-}
-.square-option:hover i {
-  animation: rotate infinite linear 1.2s;
-}
-.square-option i {
+.settings .square-option i {
   transition: var(--trans-02s-linear);
   color: var(--clr-white);
+  animation: rotate infinite linear 1.2s;
 }
-
-.options {
+.settings .options {
+  transform: translateX(-200px);
+  opacity: 0;
   background-color: var(--clr-white);
-  display: none;
-  width: 200px;
+  padding: 10px;
   transition: var(--trans-04s-easeinout);
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
 }
-.options .colors {
+.settings .options .colors {
+  display: grid;
+  grid-template-columns: 0fr 0fr 0fr;
+}
+.settings .options .color {
   display: flex;
-  flex-direction: row;
-}
-.options .color {
+  justify-content: center;
+  align-items: center;
+  color: var(--clr-white);
   height: 30px;
   width: 30px;
   border-radius: 50%;
   margin: 5px;
   cursor: pointer;
 }
-.options .clr-default {
+.settings .options .clr-default {
   background-color: #1294b8;
 }
-.options .clr-green {
-  background-color: green;
+.settings .options .clr-green {
+  background-color: rgb(27, 130, 27);
 }
-.options .clr-red {
-  background-color: red;
+.settings .options .clr-red {
+  background-color: rgb(210, 21, 21);
 }
-.options .clr-blue {
-  background-color: blue;
+.settings .options .clr-blue {
+  background-color: rgb(18, 18, 192);
 }
-
-.active {
+.settings .options .clr-orange {
+  background-color: rgb(207, 143, 22);
+}
+.settings .active {
   transition: var(--trans-04s-easeinout);
-  display: block;
+  transform: translateX(0px);
+  opacity: 1;
+  z-index: 1;
 }
 
 .goUp {
@@ -737,8 +745,8 @@ footer .copyright {
   bottom: 20px;
   right: 20px;
   background-color: #3E3E3E;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   justify-content: center;
