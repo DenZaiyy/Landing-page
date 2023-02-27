@@ -27,6 +27,7 @@ html {
 
 header {
     background: radial-gradient(rgb(255,255,255), var(--clr-gradient));
+    transition: var(--trans-02s-linear);
     min-height: 100vh;
     nav {
         display: flex;
@@ -34,6 +35,10 @@ header {
         justify-content: space-around;
         align-items: center;
         padding: 20px;
+
+        .nav-toggle {
+            display: none;
+        }
 
         .logo {
             a {
@@ -164,7 +169,7 @@ header {
     .cards {
         // margin-top: 50px;
         // margin-bottom: 30px;
-        margin: 50px;
+        margin: 100px;
         display: flex;
 
         .card {
@@ -175,8 +180,8 @@ header {
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            width: 100%;
-            height: 100%;
+            width: 20vw;
+            height: 30vh;
             padding: 50px;
             border-radius: 10px;
             color: var(--clr-white);
@@ -265,26 +270,15 @@ header {
                 color: var(--clr-grey);
                 font-size: .8rem;
             }
-            .projects {
-                margin-bottom: 50px;
-            }
-
-            .satisfied {
-                margin-bottom: 50px;
-            }
-
-            .members {
-                margin-bottom: 50px;
-            }
-
-            .NbEmployee {
+            
+            .about {
                 margin-bottom: 50px;
             }
 
             .img {
                 position: relative;
-                width: 200px;
-                height: 200px;
+                width: 12vmax;
+                height: 12vmax;
                 border-radius: 50%;
                 overflow: hidden;
                 margin: 0;
@@ -297,7 +291,7 @@ header {
                     left: 0;
                     z-index: 1;
                     opacity: 0;
-                    transition: all .4s ease-out;
+                    transition: var(--trans-04s-easeinout);
 
                     a{
                         text-decoration: none;
@@ -305,6 +299,13 @@ header {
                         background-color: var(--clr-white);
                         margin-top: 5px;
                         border-radius: 50%;
+                        font-size: 1em;
+                        transition: var(--trans-02s-linear);
+
+                        &:hover {
+                            transition: var(--trans-02s-linear);
+                            color: var(--clr-cyan);
+                        }
 
                         i {
                             padding: 8px;
@@ -315,7 +316,7 @@ header {
                 &:hover {
                     .socials {
                         transition: all .2s ease-in;
-                        transform: translateX(15px) translateY(40px);
+                        transform: translateX(100%) translateY(100%);
                         opacity: 1;
                     }
                 }
@@ -424,10 +425,11 @@ header {
     .blogs {
         display: flex;
         justify-content: space-around;
+        padding: 100px;
 
         .blog {
             display: flex;
-            width: 500px;
+            width: auto;
             flex-direction: column;
             align-items: flex-start;
             margin: 30px;
@@ -436,21 +438,23 @@ header {
                 position: relative;
                 border-radius: 10px;
                 overflow: hidden;
-                width: 500px;
-                height: auto;
+                width: 100%;
+                height: 98%;
                 transition: var(--trans-04s-easeinout);
 
                 img {
                     width: 100%;
                     border-radius: 10px;
+                    position: relative;
+                    z-index: -1;
                     transition: var(--trans-04s-easeinout);
                 }
 
                 .middle {
                     position: absolute;
                     display: flex;
-                    top: 40px;
-                    left: 40px;
+                    top: 5%;
+                    left: 5%;
                     flex-direction: column;
                     align-items: flex-start;
                     opacity: 0;
@@ -468,13 +472,8 @@ header {
                 }
 
                 &:hover {
-                    // background-color: rgba(0, 0, 0, 0.6);
-                    z-index: 1;
-
-                    img {
-                        filter: contrast(.3);
-                        transition: var(--trans-04s-easeinout);
-                    }
+                    background-color: rgba(0, 0, 0, 0.6);
+                    transition: var(--trans-04s-easeinout);
 
                     .middle {
                         transition: var(--trans-04s-easeinout);
@@ -608,7 +607,8 @@ header {
                 background-color: var(--clr-white);
                 box-shadow: 0 5px 10px -3px var(--clr-black);
                 border-radius: 10px;
-                width: 300px;
+                min-width: 300px;
+                width: 15vmax;
                 height: auto;
 
                 .card-title {
@@ -625,6 +625,7 @@ header {
 
                     p{
                         margin-top: 0;
+                        width: auto;
                     }
 
                     .price-mount {
@@ -782,11 +783,13 @@ footer {
 .settings {
     // transform: translateX(-140px);
     display: flex;
-    flex-direction: column-reverse;
     position: fixed;
     top: 20vh;
-    left: 0;
     z-index: 1;
+
+    .test {
+        position: relative;
+    }
 
     .square-option{
         display: flex;
@@ -794,12 +797,13 @@ footer {
         align-items: center;
         width: 50px;
         height: 50px;
+        left: 0;
         background-color: #393937;
         text-decoration: none;
         border-top-right-radius: 10px;
         border-bottom-right-radius: 10px;
         cursor: pointer;
-        transition: var(--trans-02s-linear);
+        transition: var(--trans-04s-easeinout);
 
         i {
             transition: var(--trans-02s-linear);
@@ -809,14 +813,12 @@ footer {
     }
 
     .options {
-        transform: translateX(-200px);
-        // display: none;
-        opacity: 0;
+        position: absolute;
+        right: 100%;
         background-color: var(--clr-white);
         padding: 10px;
         transition: var(--trans-04s-easeinout);
-        border-bottom-right-radius: 10px;
-        border-top-right-radius: 10px;
+
         .colors {
             display: grid;
             grid-template-columns: 0fr 0fr 0fr;
@@ -839,27 +841,41 @@ footer {
         }
 
         .clr-green {
-            background-color: rgb(27, 130, 27);
+            background-color: #2e8b57;
         }
 
         .clr-red {
-            background-color: rgb(210, 21, 21);
+            background-color: #dc143c;
         }
 
         .clr-blue {
-            background-color: rgb(18, 18, 192);
+            background-color: #4169e1;
         }
 
         .clr-orange {
-            background-color: rgb(207, 143, 22);
+            background-color: #ff9966;
+        }
+
+        .clr-pink {
+            background-color: #ffc1cc;
+        }
+
+        .clr-purple {
+            background-color: #800080;
+        }
+
+        .clr-gold {
+            background-color: #d4af37;
+        }
+
+        .clr-teal {
+            background-color: #008080;
         }
     }
 
     .active {
         transition: var(--trans-04s-easeinout);
-        transform: translateX(0px);
-        // display: block;
-        opacity: 1;
+        transform: translateX(140px);
         z-index: 1;
     }
 }
@@ -882,6 +898,7 @@ footer {
     &:hover {
         transition: var(--trans-02s-linear);
         transform: scale(.9);
+        background-color: var(--clr-cyan);
     }
 }
 
@@ -893,3 +910,6 @@ footer {
         transform: rotate(360deg);
     }
 }
+
+@import './media_phone';
+@import './media_tablet';
