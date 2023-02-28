@@ -33,12 +33,12 @@
                 border-color: transparent;
                 transition: var(--trans-02s-linear);
                 cursor: pointer;
-              }
+            }
 
-              .nav-toggle:hover {
+            .nav-toggle:hover {
                 color: var(--clr-cyan);
                 transform: rotate(90deg);
-              }
+            }
 
             .links {
                 display: block;
@@ -51,7 +51,7 @@
                     margin-bottom: 5px;
                     font-size: 1.2rem;
                 }
-              }
+            }
 
             .show-links {
                 height: 14rem;
@@ -144,6 +144,11 @@
                         border-radius: 50%;
                         width: 200px;
                         height: 200px;
+                        filter: grayscale(0);
+
+                        &:hover {
+                            transform: none;
+                        }
                     }
                     .socials {
                         opacity: 1;
@@ -161,6 +166,12 @@
                             .fa-facebook-f {
                                 width: 32px;
                             }
+                        }
+                    }
+
+                    &:hover {
+                        .socials {
+                            transform: none;
                         }
                     }
                 }
