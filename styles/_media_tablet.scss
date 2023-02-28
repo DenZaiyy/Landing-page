@@ -287,17 +287,21 @@
 
         .pricing {
             padding: 20px;
+            min-height: auto;
 
             p {
                 width: 100%;
             }
 
             .cards-price {
+                width: 100%;
                 display: grid;
-                grid-template-columns: 0fr 0fr;
+                grid-template-columns: 0fr 0fr 0fr;
 
                 .card-price {
-                    margin-top: 20px;
+                    width: 250px;
+                    min-width: auto;
+                    margin: 0;
                 }
 
                 .advanced {

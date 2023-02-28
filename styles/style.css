@@ -1265,16 +1265,20 @@ footer .copyright {
   }
   .pricing-sec .pricing {
     padding: 20px;
+    min-height: auto;
   }
   .pricing-sec .pricing p {
     width: 100%;
   }
   .pricing-sec .pricing .cards-price {
+    width: 100%;
     display: grid;
-    grid-template-columns: 0fr 0fr;
+    grid-template-columns: 0fr 0fr 0fr;
   }
   .pricing-sec .pricing .cards-price .card-price {
-    margin-top: 20px;
+    width: 250px;
+    min-width: auto;
+    margin: 0;
   }
   .pricing-sec .pricing .cards-price .advanced {
     transform: none;
