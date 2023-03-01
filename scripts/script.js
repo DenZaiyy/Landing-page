@@ -22,19 +22,11 @@ colors.forEach(function (color) {
 //Burger menu
 const burgerMenu = document.getElementById("burger-menu");
 const links = document.querySelector(".links");
-// const liLinks = links.querySelectorAll("li");
 
 burgerMenu.addEventListener("click", function () {
     this.classList.toggle("close");
     links.classList.toggle("overlay");
 });
-
-// liLinks.forEach(function (link) {
-//     link.addEventListener("click", function () {
-//         links.classList.remove("overlay");
-//         burgerMenu.classList.remove("close");
-//     });
-// });
 
 //NavBar
 const navbar = document.getElementById("nav");
@@ -73,6 +65,10 @@ scrollLinks.forEach(function (link) {
         if (!fixedNav) {
             position = position - navHeight;
         }
+        // else {
+        //     console.log(links.style.minHeight);
+        //     links.style.minHeight = "100%" - navHeight;
+        // }
 
         window.scrollTo({
             left: 0,
