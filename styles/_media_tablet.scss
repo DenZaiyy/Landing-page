@@ -1,60 +1,136 @@
 @media screen and (min-width: 768px) and (max-width: 992px) {
+
+    html {
+        overflow:auto;
+        &#burger-menu {
+            overflow: hidden;
+        }
+    }
+    body {
+        position: relative;
+        overflow-x: hidden;
+    }
+
     header {
         nav {
-            display: block;
+            // position: relative;
+            display: flex;
 
-            .nav-header {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-between;
+            .logo {
+                a {
+                    font-size: 2.5em;
+                }
+            }
 
-                .logo {
-                    a {
-                        font-size: 2.5em;
+            #burger-menu {
+                display: block;
+                cursor: pointer;
+                height: 27px;
+                width: 27px;
+                overflow: visible;
+                position: relative;
+                z-index: 10;
+
+                // THE LINES
+                span,
+                span:before,
+                span:after {
+                    background: #fff;
+                    display: block;
+                    height: 2px;
+                    opacity: 1;
+                    position: absolute;
+                    transition: 0.3s ease-in-out;
+                }
+
+                span:before,
+                span:after {
+                    content: '';
+                }
+
+                // TOP
+                span:before {
+                    left: 0px;
+                    top: -10px;
+                    width: 27px;
+                }
+
+                // MIDDLE
+                span {
+                    right: 0px;
+                    top: 13px;
+                    width: 27px;
+                }
+
+                // BOTTOM
+                span:after {
+                    left: 0px;
+                    top: 10px;
+                    width: 27px;
+                }
+
+                // ROTATION ON CLICK
+                &.close {
+                    // TOP
+                    span:before {
+                        top: 0px;
+                        transform: rotate(90deg);
+                        width: 27px;
+                    }
+
+                    // MIDDLE
+                    span {
+                        transform: rotate(-45deg);
+                        top: 13px;
+                        width: 27px;
+                    }
+
+                    // BOTTOM
+                    span:after {
+                        top: 0px;
+                        left: 0;
+                        transform: rotate(90deg);
+                        opacity: 0;
+                        width: 0;
                     }
                 }
             }
 
-            .nav-toggle {
-                display: block;
-                font-size: 1.5rem;
-                color: var(--clr-white);
-                background: transparent;
-                border-color: transparent;
-                transition: var(--trans-02s-linear);
-                cursor: pointer;
-            }
-
-            .nav-toggle:hover {
-                color: var(--clr-cyan);
-                transform: rotate(90deg);
-            }
-
             .links {
-                display: block;
+                z-index: 5;
+                min-width: 100%;
+                min-height: 100%;
+                position: fixed;
+                top: 0;
                 height: 0;
-                overflow: hidden;
-                transition: var(--trans-02s-linear);
-                width: 100%;
-
-                a {
-                    text-align: center;
-                    margin-bottom: 5px;
-                    font-size: 1.2rem;
+                visibility: hidden;
+                opacity: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: all 0.3s ease-in-out;
+            
+                &.overlay {
+                    visibility: visible;
+                    opacity: 1;
+                    background: rgba(0, 0, 0, 0.7);
                 }
-            }
-
-            .show-links {
-                height: 16rem;
-                transition: var(--trans-02s-linear);
-            }
-
-            .socials {
-                // display: none;
-                // margin-top: 20px;
-                justify-content: center; 
+            
+                ul {
+                    padding: 0;
+                }
+            
                 li {
-                    margin: 0;
+                    list-style: none;
+                }
+            
+                a {
+                    color: #fff;
+                    display: block;
+                    font-size: 32px;
+                    margin-bottom: 30px;
+                    text-decoration: none;
                 }
             }
         }
@@ -319,6 +395,13 @@
             i {
                 animation: none;
             }
+        }
+    }
+
+    .goUp {
+        &:hover {
+            transform: none;
+            background-color: #3E3E3E;
         }
     }
 }
