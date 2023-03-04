@@ -231,6 +231,10 @@
                             padding: 10px;
                             color: var(--clr-white);
 
+                            &:hover {
+                                color: var(--clr-white);
+                            }
+
                             .fa-facebook-f {
                                 width: 32px;
                             }

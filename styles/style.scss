@@ -179,7 +179,7 @@ header {
 
         .card {
             background: var(--clr-cyan);
-            margin: 0 15px;
+            margin: 0 1em;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -187,7 +187,6 @@ header {
             align-items: center;
             width: 20vw;
             height: 30vh;
-            padding: 50px;
             border-radius: 10px;
             color: var(--clr-white);
             transition: var(--trans-02s-linear);
@@ -302,7 +301,7 @@ header {
                         text-decoration: none;
                         color: black;
                         background-color: var(--clr-white);
-                        margin-top: 5px;
+                        margin-top: .2em;
                         border-radius: 50%;
                         font-size: 1em;
                         transition: var(--trans-02s-linear);
@@ -321,7 +320,7 @@ header {
                 &:hover {
                     .socials {
                         transition: all .2s ease-in;
-                        transform: translateX(100%) translateY(100%);
+                        transform: translateX(50%) translateY(50%);
                         opacity: 1;
                     }
                 }
